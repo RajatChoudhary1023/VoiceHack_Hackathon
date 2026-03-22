@@ -1,12 +1,9 @@
 from sklearn.metrics import f1_score, precision_score, recall_score
 
 def evaluate_model(model, X_val, y_val):
-    # Get probabilities
     probs = model.predict_proba(X_val)[:, 1]
-
-    # Adjust threshold (VERY IMPORTANT)
-    threshold = 0.7  # try 0.6 or 0.65 later
-
+    
+    threshold = 0.7
     preds = (probs > threshold).astype(int)
 
     f1 = f1_score(y_val, preds)
