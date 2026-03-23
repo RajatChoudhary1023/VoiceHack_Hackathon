@@ -7,10 +7,10 @@ from src.evaluate import evaluate_model
 train_df, val_df = load_data("data/hackathon_train.csv", "data/hackathon_val.csv")
 
 # Features
-X_train = advanced_features(train_df)
+X_train, _ = advanced_features(train_df)
 y_train = train_df['has_ticket']
 
-X_val = advanced_features(val_df)
+X_val, _ = advanced_features(val_df)
 y_val = val_df['has_ticket']
 
 # Train

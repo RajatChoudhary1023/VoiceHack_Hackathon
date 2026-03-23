@@ -3,7 +3,7 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 def evaluate_model(model, X_val, y_val):
     probs = model.predict_proba(X_val)[:, 1]
     
-    threshold = 0.7
+    threshold = 0.8
     preds = (probs > threshold).astype(int)
 
     f1 = f1_score(y_val, preds)
